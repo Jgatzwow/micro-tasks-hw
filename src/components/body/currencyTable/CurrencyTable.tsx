@@ -2,7 +2,7 @@ import React from 'react';
 
 type PropsType = {
     currencyTable: Array<CurrencyTableType>
-    currencyFilter: (name:string) => void
+    currencyFilter: (name:nameType) => void
     resetFilter: () => void
 }
 type CurrencyTableType = {
@@ -10,7 +10,7 @@ type CurrencyTableType = {
     value: number
     number: string
 }
-
+type nameType = 'Dollars' | 'Hryvnias'
 
 export const CurrencyTable = (props: PropsType) => {
     const {currencyTable, currencyFilter, resetFilter} = props

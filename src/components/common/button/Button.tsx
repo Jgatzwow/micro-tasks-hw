@@ -1,16 +1,21 @@
 import React from 'react';
 
 type PropsType = {
-    btnName: string
-    callback: ()=> void
+    name?: string
+    age?: number
+    address?: string
+    btnName: btnNameType
+    callback: (btnName: btnNameType, name?: string, age?: number, address?: string)=> void
 }
 
+type btnNameType = 'My youtube channel 1' | 'My youtube channel 2' | 'Stupid button'
+
 export const Button = (props:PropsType) => {
-    const {btnName, callback} = props
+    const {btnName, callback, name,address,age} = props
 
     return (
         <>
-            <button onClick={callback}>{btnName}</button>
+            <button onClick={()=> callback(btnName, name, age, address)}>{btnName}</button>
         </>
     );
 }

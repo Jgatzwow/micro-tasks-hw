@@ -17,6 +17,8 @@ export const NewComponent = () => {
         {banknotes: 'Hryvnias', value: 50, number: ' v1234567890'},
     ])
 
+
+
     let [filter, setFilter] = useState<FilterType>('All Currencies')
     const onClickFilterHandler = (name: FilterType) => {
         setFilter(name)

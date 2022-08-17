@@ -7,17 +7,19 @@ type PropsType = {
     title: string
     carTable: Array<CarTableType>
     btnName: {
-        btnName: string
-        btnName2: string
-        btnName3: string
+        btnName: btnNameType
+        btnName2: btnNameType
+        btnName3: btnNameType
     }
-    btn1Callback: () => void
-    btn2Callback: () => void
-    btn3Callback: () => void
+    btn1Callback: (btnName: btnNameType,
+                   name?: string,
+                   age?: number,
+                   address?: string) => void
     currencyTable: Array<CurrencyTableType>
-    filteredByCurrency: (name:string)=>void
-    resetFilter: () =>void
+    filteredByCurrency: (name: nameType) => void
+    resetFilter: () => void
 }
+type nameType = 'Dollars' | 'Hryvnias'
 type CarTableType = {
     manufacturer: string
     model: string
@@ -27,21 +29,25 @@ type CurrencyTableType = {
     value: number
     number: string
 }
-
+type btnNameType = 'My youtube channel 1' | 'My youtube channel 2' | 'Stupid button'
 export const Body = (props: PropsType) => {
-    const {title, carTable, btn1Callback,
-        btn2Callback, btn3Callback, currencyTable,
-        filteredByCurrency, resetFilter} = props
+    const {
+        title, carTable, btn1Callback, currencyTable,
+        filteredByCurrency, resetFilter
+    } = props
+
     const {btnName, btnName2, btnName3} = props.btnName
-
-
+    let name = ' Genya'
+    let age = 23
+    let address = 'Kiev'
     return (
         <div>
             <main>{title}</main>
             <CarTable carTable={carTable}/>
             <Button callback={btn1Callback} btnName={btnName}/>
-            <Button callback={btn2Callback} btnName={btnName2}/>
-            <Button callback={btn3Callback} btnName={btnName3}/>
+            <Button callback={btn1Callback} btnName={btnName2}
+                    name={name} age={age} address={address}/>
+            <Button callback={btn1Callback} btnName={btnName3}/>
             <CurrencyTable
                 currencyTable={currencyTable}
                 currencyFilter={filteredByCurrency}

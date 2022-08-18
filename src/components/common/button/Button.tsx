@@ -5,10 +5,13 @@ type PropsType = {
     age?: number
     address?: string
     btnName: btnNameType
-    callback: (btnName: btnNameType, name?: string, age?: number, address?: string)=> void
+    callback: (btnName: btnNameType,
+               name?: string,
+               age?: number,
+               address?: string)=> void
 }
 
-type btnNameType = 'My youtube channel 1' | 'My youtube channel 2' | 'Stupid button'
+export type btnNameType = 'My youtube channel 1' | 'My youtube channel 2' | 'Stupid button'
 
 export const Button = (props:PropsType) => {
     const {btnName, callback, name,address,age} = props

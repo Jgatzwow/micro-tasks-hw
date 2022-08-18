@@ -4,6 +4,8 @@ import {Header} from './components/header/Header';
 import {Body} from './components/body/Body';
 import {Footer} from "./components/footer/Footer";
 import {NewComponent} from "./components/body/newComponent/NewComponent";
+import {btnNameType} from "./components/common/button/Button";
+import {nameType} from "./components/body/currencyTable/CurrencyTable";
 
 const App = () => {
     const headerTitle = 'Header'
@@ -17,7 +19,7 @@ const App = () => {
     const btnName = 'My youtube channel 1'
     const btnName2 = 'My youtube channel 2'
     const btnName3 = 'Stupid button'
-    type btnNameType = 'My youtube channel 1' | 'My youtube channel 2' | 'Stupid button'
+
 
     const buttonFunction1 = (btnName: btnNameType,
                              name?: string,
@@ -53,7 +55,6 @@ const App = () => {
     ]
     const [money, setMoney] = useState(initialState)
 
-    type nameType = 'Dollars' | 'Hryvnias'
 
     const currencyFilter = (name: nameType) => {
         let filteredByCurrency = initialState.filter(el => el.banknotes === name)

@@ -10,7 +10,7 @@ type CurrencyTableType = {
     value: number
     number: string
 }
-type nameType = 'Dollars' | 'Hryvnias'
+export type nameType = 'Dollars' | 'Hryvnias'
 
 export const CurrencyTable = (props: PropsType) => {
     const {currencyTable, currencyFilter, resetFilter} = props

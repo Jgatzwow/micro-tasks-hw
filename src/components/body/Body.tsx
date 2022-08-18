@@ -1,7 +1,7 @@
 import React from 'react';
 import {CarTable} from "./carTable/CarTable";
-import {Button} from "../common/button/Button";
-import {CurrencyTable} from "./currencyTable/CurrencyTable";
+import {btnNameType, Button} from "../common/button/Button";
+import {CurrencyTable, nameType} from "./currencyTable/CurrencyTable";
 
 type PropsType = {
     title: string
@@ -19,7 +19,7 @@ type PropsType = {
     filteredByCurrency: (name: nameType) => void
     resetFilter: () => void
 }
-type nameType = 'Dollars' | 'Hryvnias'
+
 type CarTableType = {
     manufacturer: string
     model: string
@@ -29,7 +29,7 @@ type CurrencyTableType = {
     value: number
     number: string
 }
-type btnNameType = 'My youtube channel 1' | 'My youtube channel 2' | 'Stupid button'
+
 export const Body = (props: PropsType) => {
     const {
         title, carTable, btn1Callback, currencyTable,

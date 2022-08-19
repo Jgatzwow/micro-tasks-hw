@@ -1,20 +1,24 @@
 import React from 'react';
+import {nameType} from '../../../App';
 
 type PropsType = {
     currencyTable: Array<CurrencyTableType>
-    currencyFilter: (name:nameType) => void
-    resetFilter: () => void
+    currencyFilter: (name: nameType) => void
 }
 type CurrencyTableType = {
     banknotes: string
     value: number
     number: string
 }
-export type nameType = 'Dollars' | 'Hryvnias'
+
+
 
 export const CurrencyTable = (props: PropsType) => {
-    const {currencyTable, currencyFilter, resetFilter} = props
+    const {currencyTable, currencyFilter} = props
 
+    const changeFilter = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        currencyFilter(e.currentTarget.value  as nameType)
+    }
 
     return (
         <div>
@@ -29,9 +33,9 @@ export const CurrencyTable = (props: PropsType) => {
                     )
                 })}
             </ul>
-            <button onClick={() => {resetFilter()}}>Display All</button>
-            <button onClick={() => {currencyFilter('Dollars')}}>Dollars</button>
-            <button onClick={() => {currencyFilter('Hryvnias')}}>Hryvnias</button>
+            <button value={'reset'} onClick={changeFilter}>Display All</button>
+            <button value={'Dollars'} onClick={changeFilter}>Dollars</button>
+            <button value={'Hryvnias'} onClick={changeFilter}>Hryvnias</button>
         </div>
     )
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import {CarTable} from "./carTable/CarTable";
-import {btnNameType, Button} from "../common/button/Button";
-import {CurrencyTable, nameType} from "./currencyTable/CurrencyTable";
+import {CarTable} from './carTable/CarTable';
+import {btnNameType, Button} from '../common/button/Button';
+import {CurrencyTable} from './currencyTable/CurrencyTable';
+import {nameType} from '../../App';
 
 type PropsType = {
     title: string
@@ -17,7 +18,6 @@ type PropsType = {
                    address?: string) => void
     currencyTable: Array<CurrencyTableType>
     filteredByCurrency: (name: nameType) => void
-    resetFilter: () => void
 }
 
 type CarTableType = {
@@ -33,11 +33,11 @@ type CurrencyTableType = {
 export const Body = (props: PropsType) => {
     const {
         title, carTable, btn1Callback, currencyTable,
-        filteredByCurrency, resetFilter
+        filteredByCurrency
     } = props
 
     const {btnName, btnName2, btnName3} = props.btnName
-    let name = ' Genya'
+    let name = 'Genya'
     let age = 23
     let address = 'Kiev'
     return (
@@ -50,9 +50,7 @@ export const Body = (props: PropsType) => {
             <Button callback={btn1Callback} btnName={btnName3}/>
             <CurrencyTable
                 currencyTable={currencyTable}
-                currencyFilter={filteredByCurrency}
-                resetFilter={resetFilter}/>
-
+                currencyFilter={filteredByCurrency}/>
         </div>
     )
 }

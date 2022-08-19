@@ -10,6 +10,5 @@ export const Header = (props: PropsType) => {
     return <header>{title}</header>;
 
 
-
 }
 

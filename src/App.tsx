@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import './App.css';
 import {Header} from './components/header/Header';
 import {Body} from './components/body/Body';
-import {Footer} from "./components/footer/Footer";
-import {NewComponent} from "./components/body/newComponent/NewComponent";
-import {btnNameType} from "./components/common/button/Button";
-import {nameType} from "./components/body/currencyTable/CurrencyTable";
+import {Footer} from './components/footer/Footer';
+import {NewComponent} from './components/body/newComponent/NewComponent';
+import {btnNameType} from './components/common/button/Button';
 
+export type nameType = 'Dollars' | 'Hryvnias' | 'reset'
 const App = () => {
     const headerTitle = 'Header'
     const bodyTitle = 'Body'
@@ -26,11 +26,11 @@ const App = () => {
                              age?: number,
                              address?: string) => {
         if (btnName === 'My youtube channel 1') {
-            console.log("I'm Michael")
+            console.log('I\'m Michael')
         } else if (btnName === 'My youtube channel 2') {
             console.log(name, age, address)
         } else {
-            console.log("I'm stupid button")
+            console.log('I\'m stupid button')
         }
 
     }
@@ -57,13 +57,13 @@ const App = () => {
 
 
     const currencyFilter = (name: nameType) => {
-        let filteredByCurrency = initialState.filter(el => el.banknotes === name)
+        if (name === 'reset') {
+            setMoney(initialState)
+            return
+        }
+        const filteredByCurrency = initialState.filter(el => el.banknotes === name)
         setMoney(filteredByCurrency)
     }
-    const resetFilter = () => {
-        setMoney(initialState)
-    }
-
     return (
         <>
             <Header title={headerTitle}/>
@@ -72,8 +72,7 @@ const App = () => {
                   btnName={{btnName, btnName2, btnName3}}
                   btn1Callback={buttonFunction1}
                   currencyTable={money}
-                  filteredByCurrency={currencyFilter}
-                  resetFilter={resetFilter}/>
+                  filteredByCurrency={currencyFilter}/>
             <h2>{num}</h2>
             <button onClick={numCounter}>counter</button>
             <button onClick={numReset}>reset</button>

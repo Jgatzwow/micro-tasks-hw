@@ -45,8 +45,11 @@ export const Body = (props: PropsType) => {
             <main>{title}</main>
             <CarTable carTable={carTable}/>
             <Button callback={btn1Callback} btnName={btnName}/>
-            <Button callback={btn1Callback} btnName={btnName2}
-                    name={name} age={age} address={address}/>
+            <Button callback={btn1Callback}
+                    btnName={btnName2}
+                    name={name}
+                    age={age}
+                    address={address}/>
             <Button callback={btn1Callback} btnName={btnName3}/>
             <CurrencyTable
                 currencyTable={currencyTable}

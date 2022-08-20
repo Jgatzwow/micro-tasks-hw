@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {NewComponentItem,} from "./NewComponentItem";
+import React, {useState} from 'react';
+import {NewComponentItem,} from './NewComponentItem';
 
 
 type FilterType = 'All Currencies' | 'Dollars' | 'Hryvnias'
@@ -18,7 +18,6 @@ export const NewComponent = () => {
     ])
 
 
-
     let [filter, setFilter] = useState<FilterType>('All Currencies')
     const onClickFilterHandler = (name: FilterType) => {
         setFilter(name)
@@ -28,7 +27,8 @@ export const NewComponent = () => {
     return (
         <NewComponentItem
             currentMoney={money}
-            onClickFilterHandler={onClickFilterHandler} filter={filter}/>
+            onClickFilterHandler={onClickFilterHandler}
+            filter={filter}/>
     )
 }
 

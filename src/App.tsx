@@ -19,8 +19,6 @@ const App = () => {
     const btnName = 'My youtube channel 1'
     const btnName2 = 'My youtube channel 2'
     const btnName3 = 'Stupid button'
-
-
     const buttonFunction1 = (btnName: btnNameType,
                              name?: string,
                              age?: number,

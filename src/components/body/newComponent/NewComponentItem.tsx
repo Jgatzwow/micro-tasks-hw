@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type FilterType = 'All Currencies' | 'Dollars' | 'Hryvnias'
 
@@ -22,6 +22,10 @@ export const NewComponentItem = (props: PropsType) => {
     } else if (filter === 'Hryvnias') {
         newCurrentMoney = currentMoney.filter(filteredMoney => filteredMoney.banknotes === 'Hryvnias')
     }
+    const changeFilter1 = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        onClickFilterHandler(e.currentTarget.value as FilterType)
+    }
+
     return (
         <div>
             <ul>
@@ -32,9 +36,9 @@ export const NewComponentItem = (props: PropsType) => {
                 })}
             </ul>
 
-            <button onClick={() => onClickFilterHandler('All Currencies')}>All Currencies</button>
-            <button onClick={() => onClickFilterHandler('Dollars')}>Dollars</button>
-            <button onClick={() => onClickFilterHandler('Hryvnias')}>Hryvnias</button>
+            <button value={'All Currencies'} onClick={changeFilter1}>All Currencies</button>
+            <button value={'Dollars'} onClick={changeFilter1}>Dollars</button>
+            <button value={'Hryvnias'} onClick={changeFilter1}>Hryvnias</button>
         </div>
     )
 }

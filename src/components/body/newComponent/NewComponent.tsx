@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {NewComponentItem,} from './NewComponentItem';
 
 
-type FilterType = 'All Currencies' | 'Dollars' | 'Hryvnias'
+export type FilterType = 'All Currencies' | 'Dollars' | 'Hryvnias'
 
 export const NewComponent = () => {
 

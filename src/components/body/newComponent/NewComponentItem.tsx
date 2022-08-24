@@ -1,6 +1,7 @@
 import React from 'react';
+import {FilterType} from './NewComponent';
 
-type FilterType = 'All Currencies' | 'Dollars' | 'Hryvnias'
+
 
 type PropsType = {
     currentMoney: Array<CurrentMoneyType>

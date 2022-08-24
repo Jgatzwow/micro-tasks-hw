@@ -3,6 +3,7 @@ import {CarTable} from './carTable/CarTable';
 import {btnNameType, Button} from '../common/button/Button';
 import {CurrencyTable} from './currencyTable/CurrencyTable';
 import {nameType} from '../../App';
+import {Messages} from './Messages/Messages';
 
 type PropsType = {
     title: string
@@ -54,7 +55,9 @@ export const Body = (props: PropsType) => {
             <CurrencyTable
                 currencyTable={currencyTable}
                 currencyFilter={filteredByCurrency}/>
+            <Messages/>
         </div>
+
     )
 }
 

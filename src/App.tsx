@@ -62,6 +62,8 @@ const App = () => {
         const filteredByCurrency = initialState.filter(el => el.banknotes === name)
         setMoney(filteredByCurrency)
     }
+
+
     return (
         <>
             <Header title={headerTitle}/>
@@ -74,7 +76,6 @@ const App = () => {
             <h2>{num}</h2>
             <button onClick={numCounter}>counter</button>
             <button onClick={numReset}>reset</button>
-
             <Footer title={footerTitle}/>
             <NewComponent/>
 
